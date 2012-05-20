@@ -14,4 +14,3 @@ class ArticleAdmin(ImperaviAdmin):
 
 
 admin.site.register(Article, ArticleAdmin)
-admin.site.register(Post)

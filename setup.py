@@ -13,7 +13,7 @@ setup(
     keywords="django admin widget imperavi",
     platforms=['any'],
     install_requires=[
-        "django >= 1.3.0",
+        "django",
         "sorl-thumbnail >= 11.12",
     ],
     url="https://github.com/vasyabigi/django-imperavi",
