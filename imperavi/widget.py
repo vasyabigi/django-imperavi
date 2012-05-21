@@ -1,5 +1,4 @@
 import json
-import os.path
 from django.forms.widgets import Textarea
 from django.forms.util import flatatt
 from django.utils.safestring import mark_safe
@@ -16,7 +15,7 @@ class ImperaviWidget(Textarea):
 
     def __init__(self, *args, **kwargs):
         self.imperavi_settings = IMPERAVI_SETTINGS
-        self.upload_path = kwargs.pop('upload_path', os.path.join(settings.MEDIA_ROOT, 'imperavi'))
+        self.upload_path = kwargs.pop('upload_path', 'imperavi')
         super(ImperaviWidget, self).__init__(*args, **kwargs)
 
     def render(self, name, value, attrs=None):

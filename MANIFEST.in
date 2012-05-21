@@ -1,5 +1,3 @@
 include *.txt *.py
 recursive-include imperavi *
 exclude *.pyc
-exclude example *
-

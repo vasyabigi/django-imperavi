@@ -14,7 +14,7 @@ from forms import ImageForm, FileForm
 from sorl.thumbnail import get_thumbnail
 
 
-UPLOAD_PATH = getattr(settings, 'IMPERAVI_UPLOAD_PATH', os.path.join(settings.MEDIA_ROOT, 'imperavi'))
+UPLOAD_PATH = getattr(settings, 'IMPERAVI_UPLOAD_PATH', 'imperavi')
 
 
 @require_POST
@@ -30,8 +30,8 @@ def upload_image(request, upload_path=None):
         m = md5.new(image_name)
         hashed_name = '{0}{1}'.format(m.hexdigest(), extension)
         image_path = default_storage.save(os.path.join(upload_path or UPLOAD_PATH, hashed_name), image)
-        relative_path = os.path.join(settings.MEDIA_URL, os.path.relpath(image_path, settings.MEDIA_ROOT))
-        return HttpResponse('<img src="%s">' % relative_path)
+        image_url = default_storage.url(image_path)
+        return HttpResponse('<img src="%s">' % image_url)
     return HttpResponseForbidden()
 
 
@@ -39,13 +39,13 @@ def upload_image(request, upload_path=None):
 def uploaded_images_json(request, upload_path=None):
     upload_path = upload_path or UPLOAD_PATH
     results = list()
-    for (path, dirs, files) in os.walk(upload_path):
+    for (path, dirs, files) in os.walk(os.path.join(settings.MEDIA_ROOT, upload_path)):
         for image in files:
             image_path = '{0}/{1}'.format(path, image)
             if imghdr.what(image_path):
                 thumb = get_thumbnail(image_path, '100x74', crop='center')
-                relative_path = os.path.join(settings.MEDIA_URL, os.path.relpath(image_path, settings.MEDIA_ROOT))
-                results.append({'thumb': thumb.url, 'image': relative_path})
+                image_url = default_storage.url(image_path)
+                results.append({'thumb': thumb.url, 'image': image_url})
     return HttpResponse(json.dumps(results))
 
 
@@ -57,9 +57,9 @@ def upload_file(request, upload_path=None, upload_link=None):
     if form.is_valid():
         uploaded_file = form.cleaned_data['file']
         path = os.path.join(upload_path or UPLOAD_PATH, uploaded_file.name)
-        real_path = default_storage.save(path, uploaded_file)
-        relative_path = os.path.join(settings.MEDIA_URL, os.path.relpath(real_path, settings.MEDIA_ROOT))
+        image_path = default_storage.save(path, uploaded_file)
+        image_url = default_storage.url(image_path)
         if upload_link:
-            return HttpResponse(relative_path)
-        return HttpResponse('<a href="%s">%s</a>' % (relative_path, uploaded_file.name))
+            return HttpResponse(image_url)
+        return HttpResponse('<a href="%s">%s</a>' % (image_url, uploaded_file.name))
     return HttpResponseForbidden()
