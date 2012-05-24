@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="django-imperavi",
-    version="0.1.5dev",
+    version="0.1.6",
     author="Vasyl Stanislavchuk",
     author_email="vasyl.stanislavchuk@gmail.com",
     packages=find_packages(),
