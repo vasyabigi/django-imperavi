@@ -39,13 +39,13 @@ def upload_image(request, upload_path=None):
 def uploaded_images_json(request, upload_path=None):
     upload_path = upload_path or UPLOAD_PATH
     results = list()
-    for (path, dirs, files) in os.walk(os.path.join(settings.MEDIA_ROOT, upload_path)):
-        for image in files:
-            image_path = '{0}/{1}'.format(path, image)
-            if imghdr.what(image_path):
-                thumb = get_thumbnail(image_path, '100x74', crop='center')
-                image_url = default_storage.url(image_path)
-                results.append({'thumb': thumb.url, 'image': image_url})
+    path = os.path.join(settings.MEDIA_ROOT, upload_path)
+    for image in os.listdir(path):
+        image_path = '{0}/{1}'.format(path, image)
+        if imghdr.what(image_path):
+            thumb = get_thumbnail(image_path, '100x74', crop='center')
+            image_url = os.path.join(settings.MEDIA_URL, upload_path, image)
+            results.append({'thumb': thumb.url, 'image': image_url})
     return HttpResponse(json.dumps(results))
 
 
