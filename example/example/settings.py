@@ -182,6 +182,9 @@ LOGGING = {
     }
 }
 
+# Imperavi
+IMPERAVI_UPLOAD_PATH = 'imperavi-uploads/'
+
 try:
     LOCAL_SETTINGS
 except NameError:

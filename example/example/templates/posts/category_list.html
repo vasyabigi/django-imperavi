@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Articles{% endblock title %}
+
+{% block content %}
+  <h2>Articles:</h2>
+  <ul>
+    {% for category in category_list %}
+      <li>
+        <h3>Content:</h3>
+        {{ category.content|safe }}
+        <ul>
+          {% for post in category.posts.all %}
+              <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

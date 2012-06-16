@@ -14,7 +14,7 @@ from forms import ImageForm, FileForm
 from sorl.thumbnail import get_thumbnail
 
 
-UPLOAD_PATH = getattr(settings, 'IMPERAVI_UPLOAD_PATH', 'imperavi')
+UPLOAD_PATH = getattr(settings, 'IMPERAVI_UPLOAD_PATH', 'imperavi/')
 
 
 @require_POST
@@ -40,13 +40,15 @@ def uploaded_images_json(request, upload_path=None):
     upload_path = upload_path or UPLOAD_PATH
     results = list()
     path = os.path.join(settings.MEDIA_ROOT, upload_path)
-    for image in os.listdir(path):
-        image_path = '{0}/{1}'.format(path, image)
-        if imghdr.what(image_path):
-            thumb = get_thumbnail(image_path, '100x74', crop='center')
-            image_url = os.path.join(settings.MEDIA_URL, upload_path, image)
-            results.append({'thumb': thumb.url, 'image': image_url})
-    return HttpResponse(json.dumps(results))
+    if os.path.isdir(path):
+        for image in os.listdir(path):
+            image_path = '{0}{1}'.format(path, image)
+            if not os.path.isdir(image_path) and imghdr.what(image_path):
+                thumb = get_thumbnail(image_path, '100x74', crop='center')
+                image_url = os.path.join(settings.MEDIA_URL, upload_path, image)
+                results.append({'thumb': thumb.url, 'image': image_url})
+        return HttpResponse(json.dumps(results))
+    return HttpResponse('{}')
 
 
 @require_POST

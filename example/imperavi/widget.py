@@ -7,6 +7,8 @@ from django.utils.encoding import force_unicode
 from django.core.urlresolvers import reverse
 from django.conf import settings
 
+from views import UPLOAD_PATH
+
 
 IMPERAVI_SETTINGS = getattr(settings, 'IMPERAVI_CUSTOM_SETTINGS', {})
 
@@ -14,8 +16,8 @@ IMPERAVI_SETTINGS = getattr(settings, 'IMPERAVI_CUSTOM_SETTINGS', {})
 class ImperaviWidget(Textarea):
 
     def __init__(self, *args, **kwargs):
+        self.upload_path = kwargs.pop('upload_path', UPLOAD_PATH)
         self.imperavi_settings = IMPERAVI_SETTINGS
-        self.upload_path = kwargs.pop('upload_path', 'imperavi')
         super(ImperaviWidget, self).__init__(*args, **kwargs)
 
     def render(self, name, value, attrs=None):

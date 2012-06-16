@@ -1,5 +1,5 @@
 Django Imperavi editor
-================
+======================
 **Django admin WYSIWYG Imperavi editor integration.**
 
 Installation
@@ -26,4 +26,32 @@ The quickest way to add rich text editing capabilities to your admin is to use t
 
     admin.site.register(Article, ArticleAdmin)
 
-More information will be soon...
+If you want to use it with inline admin models you need to use ``ImperaviStackedInlineAdmin`` class::
+
+    from models import Post
+    from imperavi.admin import ImperaviStackedInlineAdmin
+
+    class PostInline(ImperaviStackedInlineAdmin):
+        model = Post
+        extra = 1
+
+Custom settings
+---------------
+
+Add a ``IMPERAVI_CUSTOM_SETTINGS`` variable to your ``settings.py`` with custom config::
+
+    IMPERAVI_CUSTOM_SETTINGS = {
+        'lang': 'ua',
+        'toolbar': 'mini',
+        'resize': true
+    }
+
+Full list of custom settings is `here.
+<http://redactorjs.com/docs/settings/>`_
+
+Media URL
+
+You can also customize the URL that django-imperavi will look for the Editor media at by adding ``IMPERAVI_UPLOAD_PATH`` to your ``settings.py`` file like this::
+
+IMPERAVI_UPLOAD_PATH = 'imperavi-uploads/'
+The default value is ``'imperavi'``.

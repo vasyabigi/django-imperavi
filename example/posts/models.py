@@ -1,17 +1,26 @@
 from django.db import models
 
 
-class Article(models.Model):
-    preview = models.TextField(blank=True, null=True)
+class Category(models.Model):
+    title = models.CharField(max_length=255)
     content = models.TextField()
 
+    class Meta:
+        verbose_name = u"Category"
+        verbose_name_plural = u"Categories"
+
     def __unicode__(self):
-        return self.content
+        return u'%s' % self.id
 
 
 class Post(models.Model):
-    article = models.ForeignKey(Article)
+    category = models.ForeignKey(Category, related_name='posts')
+    title = models.CharField(max_length=255)
     content = models.TextField()
 
     def __unicode__(self):
-        return self.content
+        return u'%s' % self.id
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'post-detail', (self.id,)

@@ -3,8 +3,9 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import ListView
+from django.views.generic.detail import DetailView
 
-from posts.models import Article
+from posts.models import Category, Post
 
 admin.autodiscover()
 
@@ -13,7 +14,8 @@ urlpatterns = patterns('',
 
     url(r'^imperavi/', include('imperavi.urls')),
 
-    url(r'^$', ListView.as_view(model=Article)),
+    url(r'^$', ListView.as_view(model=Category), name="home"),
+    url(r'^post/(?P<pk>[\d]*)$', DetailView.as_view(model=Post), name="post-detail"),
 )
 
 if settings.DEBUG:
