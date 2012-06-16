@@ -2,14 +2,14 @@ from setuptools import setup, find_packages
 
 setup(
     name="django-imperavi",
-    version="0.1.7",
+    version="0.2.0",
     author="Vasyl Stanislavchuk",
     author_email="vasyl.stanislavchuk@gmail.com",
     packages=find_packages(),
     include_package_data=True,
-    description="A django application that contains a widget to render a \
-        form field as beautiful Imperavi WYSIWYG editor http://redactorjs.com/",
-    long_description=open('README.txt', 'r').read(),
+    description="A django application that contains a class for admin interface to render a \
+        text field as beautiful Imperavi WYSIWYG editor http://redactorjs.com/",
+    long_description=open('README.rst', 'r').read(),
     license="MIT License",
     keywords="django admin widget imperavi",
     platforms=['any'],
