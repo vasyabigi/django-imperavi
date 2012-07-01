@@ -43,7 +43,7 @@ def uploaded_images_json(request, upload_path=None):
     path = os.path.join(settings.MEDIA_ROOT, upload_path)
     if os.path.isdir(path):
         for image in os.listdir(path):
-            image_path = '{0}{1}'.format(path, image)
+            image_path = '{0}{1}'.format(path, smart_str(image))
             if not os.path.isdir(image_path) and imghdr.what(image_path):
                 thumb = get_thumbnail(image_path, '100x74', crop='center')
                 image_url = os.path.join(settings.MEDIA_URL, upload_path, image)
