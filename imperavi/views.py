@@ -45,12 +45,13 @@ def uploaded_images_json(request, upload_path=None):
         for image in os.listdir(path):
             image_path = '{0}{1}'.format(path, smart_str(image))
             if not os.path.isdir(image_path) and imghdr.what(image_path):
-                thumb = get_thumbnail(image_path, '100x74', crop='center')
+                _image_path = '{0}{1}'.format(upload_path, smart_str(image))
+                thumb = get_thumbnail(_image_path, '100x74', crop='center')
                 image_url = os.path.join(settings.MEDIA_URL, upload_path, image)
                 results.append({'thumb': thumb.url, 'image': image_url})
         return HttpResponse(json.dumps(results))
     return HttpResponse('{}')
-
+    
 
 @require_POST
 @csrf_exempt
