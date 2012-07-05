@@ -7,48 +7,51 @@ from django.utils.encoding import force_unicode
 from django.core.urlresolvers import reverse
 from django.conf import settings
 
-from views import UPLOAD_PATH
+from imperavi.views import UPLOAD_PATH
 
 
 IMPERAVI_SETTINGS = getattr(settings, 'IMPERAVI_CUSTOM_SETTINGS', {})
 
+INIT_JS = """<script src="%(static_url)simperavi/redactor/langs/%(lang)s.js"></script>
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    $("#%(field_id)s").redactor(%(settings)s);
+  });
+</script>
+"""
+
 
 class ImperaviWidget(Textarea):
 
+    class Media:
+        js = ('imperavi/redactor/redactor.min.js',)
+        css = {'all': ('imperavi/redactor/css/redactor.css',)}
+
     def __init__(self, *args, **kwargs):
         self.upload_path = kwargs.pop('upload_path', UPLOAD_PATH)
-        self.imperavi_settings = IMPERAVI_SETTINGS
+        self.custom_settings = kwargs.pop('imperavi_settings', {})
         super(ImperaviWidget, self).__init__(*args, **kwargs)
 
-    def render(self, name, value, attrs=None):
-        if value is None:
-            value = ''
-        final_attrs = self.build_attrs(attrs, name=name)
-        field_id = final_attrs.get('id')
-        self.imperavi_settings.update({
+    def get_settings(self):
+        imperavi_settings = IMPERAVI_SETTINGS.copy()
+        imperavi_settings.update({
             'imageUpload': reverse('imperavi-upload-image', kwargs={'upload_path': self.upload_path}),
             'imageGetJson': reverse('imperavi-get-json', kwargs={'upload_path': self.upload_path}),
             'fileUpload': reverse('imperavi-upload-file', kwargs={'upload_path': self.upload_path}),
             'linkFileUpload': reverse('imperavi-upload-link-file', kwargs={'upload_path': self.upload_path}),
         })
-        imperavi_settings = json.dumps(self.imperavi_settings)
-        return mark_safe(u"""
-            <div style="width: 800px;">
-                <textarea%(attrs)s>%(value)s</textarea>
-            </div>
-            <script>
-                $(document).ready(
-                    function() {
-                        $("#%(id)s").parent().siblings('label').css('float', 'none');
-                        $("#%(id)s").height(300);
-                        $("#%(id)s").redactor(%(imperavi_settings)s);
-                    }
-                );
-            </script>
-            """ % {
-                'attrs': flatatt(final_attrs),
-                'value': conditional_escape(force_unicode(value)),
-                'id': field_id,
-                'imperavi_settings': imperavi_settings,
-            }
-        )
+        imperavi_settings.update(self.custom_settings)
+        return imperavi_settings
+
+    def render(self, name, value, attrs=None):
+        html = super(ImperaviWidget, self).render(name, value, attrs)
+        final_attrs = self.build_attrs(attrs, name=name)
+        field_id = final_attrs.get('id')
+        imperavi_settings = self.get_settings()
+        html += INIT_JS % {
+            'static_url': settings.STATIC_URL,
+            'lang': imperavi_settings['lang'],
+            'field_id': field_id,
+            'settings': json.dumps(imperavi_settings),
+        }
+        return mark_safe(html)
