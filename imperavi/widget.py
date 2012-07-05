@@ -50,7 +50,7 @@ class ImperaviWidget(Textarea):
         imperavi_settings = self.get_settings()
         html += INIT_JS % {
             'static_url': settings.STATIC_URL,
-            'lang': imperavi_settings['lang'],
+            'lang': imperavi_settings.get('lang', 'en'),
             'field_id': field_id,
             'settings': json.dumps(imperavi_settings),
         }
