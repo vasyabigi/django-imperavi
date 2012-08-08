@@ -22,7 +22,7 @@ class ImperaviWidget(Textarea):
 
     class Media:
         js = ('imperavi/redactor/redactor.min.js',)
-        css = {'all': ('imperavi/redactor/css/redactor.css',)}
+        css = {'all': ('imperavi/redactor/redactor.css',)}
 
     def __init__(self, *args, **kwargs):
         self.upload_path = kwargs.pop('upload_path', UPLOAD_PATH)
