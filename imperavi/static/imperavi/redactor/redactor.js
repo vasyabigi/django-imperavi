@@ -1,6 +1,6 @@
 /*
-	Redactor v8.0
-	Updated: August 8, 2012
+	Redactor v8.0.1
+	Updated: August 14, 2012
 	
 	http://redactorjs.com/
 	
@@ -10,6 +10,7 @@
 	Usage: $('#content').redactor();
 */
 
+// selection
 var _0xf6db=["(6(){11 49=24;11 14={50:6(8,10){5 10.58(8)\x2692},57:6(8,10){7(8.58!=12){5 8.58(10)\x2616}46{5 8.57(10)}},55:6(8,18,10,20){7(8===10){5 18\x3C=20}7(14.29(8)\x26\x2614.29(10)){5 14.50(8,10)}7(14.29(8)\x26\x26!14.29(10)){5!14.55(10,20,8,18)}7(!14.57(8,10)){5 14.50(8,10)}7(8.47.85\x3C=18){5 40}7(8.47[18]===10){5 0\x3C=20}5 14.50(8.47[18],10)},29:6(61){5(61!=12?61.93==3:40)},81:6(41){11 62=0;88(41=41.59){62++}5 62}};11 4=49.4=(6(){6 4(2){24.2=2}4.34.31=6(){5 4.31(24.2)};4.34.37=6(){5 4.37(24.2)};4.34.38=6(){5 4.38(24.2)};4.34.45=6(){5 4.45(24.2)};4.34.44=6(){5 4.44(24.2)};4.34.52=6(25,26,23,22){5 4.52(24.2,25,26,23,22)};4.34.51=6(){5 4.51(24.2)};5 4})();7(49.35){4.67=43;4.31=6(2){11 9;5(9=2.35())\x26\x26(9.63!=12)\x26\x26(9.36!=12)};4.37=6(2){11 9;7(!((9=2.35())\x26\x26(9.36!=12))){5 12}5[9.36,9.97]};4.38=6(2){11 9;7(!((9=2.35())\x26\x26(9.63!=12))){5 12}5[9.63,9.91]};4.45=6(2){11 8,10,18,20,27,28;7(!4.31(2)){5 12}27=4.37(2),8=27[0],18=27[1];28=4.38(2),10=28[0],20=28[1];7(14.55(8,18,10,20)){5[8,18]}5[10,20]};4.44=6(2){11 8,10,18,20,27,28;7(!4.31(2)){5 12}27=4.37(2),8=27[0],18=27[1];28=4.38(2),10=28[0],20=28[1];7(14.55(8,18,10,20)){5[10,20]}5[8,18]};4.52=6(2,25,26,23,22){11 9=2.35();7(!9){5}7(23==12){23=25}7(22==12){22=26}7(9.60\x26\x269.79){9.60(25,26);9.79(23,22)}46{54=2.15.56();54.106(25,26);54.107(23,22);71{9.73()}80(41){}9.98(54)}};4.51=6(2){71{11 9=2.35();7(!9){5}9.73()}80(41){}}}46 7(49.15.39){11 69=6(42,32,30){11 19,13,21,33,64;13=42.90(\x2789\x27);19=32.103();19.60(30);64=19.77();88(43){64.86(13,13.59);19.82(13);7(!(19.87((30?\x2766\x27:\x2783\x27),32)\x3E0\x26\x26(13.59!=12))){99}}7(19.87((30?\x2766\x27:\x2783\x27),32)===-1\x26\x2613.84){19.74((30?\x27100\x27:\x2778\x27),32);21=13.84;33=19.101.85}46{21=13.48;33=14.81(13)}13.48.72(13);5[21,33]};11 68=6(42,32,30,21,33){11 36,65,19,13,53;53=0;36=14.29(21)?21:21.47[33];65=14.29(21)?21.48:21;7(14.29(21)){53=33}13=42.90(\x2789\x27);65.86(13,36||12);19=42.76.75();19.82(13);13.48.72(13);32.74((30?\x2766\x27:\x2778\x27),19);5 32[30?\x27105\x27:\x27104\x27](\x27102\x27,53)};4.67=43;4.31=6(2){11 17;2.70();7(!2.15.39){5 40}17=2.15.39.56();5 17\x26\x2617.77().15===2.15};4.45=6(2){11 17;2.70();7(!4.31(2)){5 12}17=2.15.39.56();5 69(2.15,17,43)};4.44=6(2){11 17;2.70();7(!4.31(2)){5 12}17=2.15.39.56();5 69(2.15,17,40)};4.37=6(2){5 4.45(2)};4.38=6(2){5 4.44(2)};4.52=6(2,25,26,23,22){7(23==12){23=25}7(22==12){22=26}11 17=2.15.76.75();68(2.15,17,40,23,22);68(2.15,17,43,25,26);5 17.96()};4.51=6(2){5 2.15.39.95()}}46{4.67=40}}).94(24);","|","split","||win||Selection|return|function|if|n1|sel|n2|var|null|cursorNode|Dom|document||range|o1|cursor|o2|node|foco|focn|this|orgn|orgo|_ref|_ref2|isText|bStart|hasSelection|textRange|offset|prototype|getSelection|anchorNode|getOrigin|getFocus|selection|false|e|doc|true|getEnd|getStart|else|childNodes|parentNode|root|isPreceding|clearSelection|setSelection|textOffset|r|isCursorPreceding|createRange|contains|compareDocumentPosition|previousSibling|collapse|d|k|focusNode|parent|anchorParent|StartToStart|supported|moveBoundary|getBoundary|focus|try|removeChild|removeAllRanges|setEndPoint|createTextRange|body|parentElement|EndToEnd|extend|catch|getChildIndex|moveToElementText|StartToEnd|nextSibling|length|insertBefore|compareEndPoints|while|a|createElement|focusOffset|0x02|nodeType|call|empty|select|anchorOffset|addRange|break|EndToStart|text|character|duplicate|moveEnd|moveStart|setStart|setEnd","replace","","\x5Cw+","\x5Cb","g"];eval(function (p,a,c,k,e,d){e=function (c){return c;} ;if(!_0xf6db[5][_0xf6db[4]](/^/,String)){while(c--){d[c]=k[c]||c;} ;k=[function (e){return d[e];} ];e=function (){return _0xf6db[6];} ;c=1;} ;while(c--){if(k[c]){p=p[_0xf6db[4]]( new RegExp(_0xf6db[7]+e(c)+_0xf6db[7],_0xf6db[8]),k[c]);} ;} ;return p;} (_0xf6db[0],10,108,_0xf6db[3][_0xf6db[2]](_0xf6db[1]),0,{}));
 
 if (typeof RELANG === 'undefined')
@@ -79,7 +80,8 @@ var RLANG = {
 	align_justify: 'Justify',
 	horizontalrule: 'Insert Horizontal Rule',
 	deleted: 'Deleted',
-	anchor: 'Anchor'
+	anchor: 'Anchor',
+	link_new_tab: 'Open link in new tab'
 };
 
 // Plugin
@@ -124,11 +126,13 @@ var Redactor = function(element, options)
 		focus: false,
 		autoresize: true,
 		fixed: false,
+		source: true,
 
 		mobile: true,
 		air: false,
 		wym: false,
 		convertLinks: true,
+		convertDivs: false,
 
 		autosave: false, // false or url
 		interval: 60, // seconds
@@ -155,7 +159,7 @@ var Redactor = function(element, options)
 		
 		buttonsCustom: {},
 		buttonsAdd: [],
-		buttons: ['formatting', '|', 'bold', 'italic', 'deleted', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|',
+		buttons: ['html', '|', 'formatting', '|', 'bold', 'italic', 'deleted', '|', 'unorderedlist', 'orderedlist', 'outdent', 'indent', '|',
 				'image', 'video', 'file', 'table', 'link', '|',
 				'fontcolor', 'backcolor', '|', 'alignleft', 'aligncenter', 'alignright', 'justify', '|', 'horizontalrule'],
 
@@ -173,6 +177,7 @@ var Redactor = function(element, options)
 		allEmptyHtml: '<p><br /></p>',
 		mozillaEmptyHtml: '<p>&nbsp;</p>',
 		buffer: false,
+		visual: true,
 					
 		// modal windows container
 		modal_file: String() + 
@@ -239,6 +244,7 @@ var Redactor = function(element, options)
 				'<div class="redactor_tab" id="redactor_tab1">' +
 					'<label>URL</label><input id="redactor_link_url" class="redactor_input"  />' +
 					'<label>' + RLANG.text + '</label><input class="redactor_input redactor_link_text" id="redactor_link_url_text" />' +
+					'<label><input type="checkbox" id="redactor_link_blank"> Open link in new tab' +
 				'</div>' +
 				'<div class="redactor_tab" id="redactor_tab2" style="display: none;">' +
 					'<label>Email</label><input id="redactor_link_mailto" class="redactor_input" />' +
@@ -282,6 +288,11 @@ var Redactor = function(element, options)
 
 
 		toolbar: {
+			html:
+			{
+				title: RLANG.html,
+				func: 'toggle'
+			},
 			formatting:
 			{
 				title: RLANG.formatting,
@@ -541,6 +552,17 @@ Redactor.prototype = {
 		}
 		else if (this.opts.toolbar !== false)
 		{
+			if (this.opts.source === false)
+			{
+				var index = this.opts.buttons.indexOf('html');	
+				var next = this.opts.buttons[index+1];				
+				this.opts.buttons.splice(index, 1);
+				if (typeof next !== 'undefined' && next === '|')
+				{
+					this.opts.buttons.splice(index, 1);
+				}
+			}				
+		
 			$.extend(this.opts.toolbar, this.opts.buttonsCustom);			
 			$.each(this.opts.buttonsAdd, $.proxy(function(i,s)
 			{
@@ -568,8 +590,7 @@ Redactor.prototype = {
 				var frag = this.extractContent();
 	
 				setTimeout($.proxy(function()
-				{
-				
+				{				
 					var pastedFrag = this.extractContent();
 					this.$editor.append(frag);				
 					this.restoreSelection();
@@ -587,7 +608,7 @@ Redactor.prototype = {
 		this.keydown();			
 
 		// autosave
-		if (this.opts.autosave === true)
+		if (this.opts.autosave !== false)
 		{
 			this.autoSave();
 		}			
@@ -899,9 +920,14 @@ Redactor.prototype = {
 	},
 	getCode: function()
 	{
-		var html = this.$editor ? this.$editor.html() : this.$el.val();
-		
-		return html;
+		if (this.opts.visual)
+		{
+			return this.$editor.html()
+		}
+		else
+		{
+			return this.$el.val();
+		}
 	},
 	insertHtml: function(html)
 	{
@@ -916,7 +942,7 @@ Redactor.prototype = {
 		{
 			this.$box.after(this.$el);
 			this.$box.remove();
-			this.$el.val(html).show();			
+			this.$el.height(this.height).val(html).show();			
 		}
 		else
 		{
@@ -924,6 +950,8 @@ Redactor.prototype = {
 			this.$box.remove();
 			this.$editor.removeClass('redactor_editor').removeClass('redactor_editor_wym').attr('contenteditable', false).html(html).show();					
 		}
+		
+		$('.redactor_air').remove();
 		
 		for (var i = 0; i < this.dropdowns.length; i++)
 		{
@@ -1032,6 +1060,20 @@ Redactor.prototype = {
 				{
 					document.execCommand(cmd, false, 'p');
 				}
+				else if ($(parent).get(0).tagName === 'P')
+				{
+					var parent2 = $(parent).parent();
+					if ($(parent2).get(0).tagName === 'BLOCKQUOTE')
+					{						
+						var node = $('<p>' + $(parent).html() + '</p>');
+						$(parent2).replaceWith(node);	
+						this.setFocusNode(node.get(0));						
+					}
+					else
+					{
+						document.execCommand(cmd, false, param);
+					}
+				}
 				else
 				{
 					document.execCommand(cmd, false, param);
@@ -1055,7 +1097,11 @@ Redactor.prototype = {
 			}	
 			
 			this.syncCode();
-			this.$editor.focus();	
+			
+			if (this.oldIE())
+			{
+				this.$editor.focus();
+			}
 			
 			if (typeof this.opts.execCommandCallback === 'function')
 			{
@@ -1169,7 +1215,7 @@ Redactor.prototype = {
 			this.syncCode();
 		}
 	},
-	
+
 	// PARAGRAPHY
 	paragraphy: function (str)
 	{
@@ -1187,8 +1233,11 @@ Redactor.prototype = {
 		}
 		
 		// convert div to p
-		str = str.replace(/<div(.*?)>([\w\W]*?)<\/div>/gi, '<p>$2</p>');
-
+		if (this.opts.convertDivs)
+		{
+			str = str.replace(/<div(.*?)>([\w\W]*?)<\/div>/gi, '<p>$2</p>');
+		}
+		
 		// inner functions
 		var X = function(x, a, b) { return x.replace(new RegExp(a, 'g'), b); };
 		var R = function(a, b) { return X(str, a, b); };
@@ -1196,6 +1245,7 @@ Redactor.prototype = {
 		// block elements
 		var blocks = '(table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|blockquote|address|math|style|script|object|input|param|p|h[1-6])';
 	
+		str = '<p>' + str; // first paragraph fix 8.0.1		
 		str += '\n';
 
 		R('<br />\\s*<br />', '\n\n');
@@ -1279,7 +1329,10 @@ Redactor.prototype = {
 		html = html.replace(/\[img(.*?)\]/gi, '<img$1>');				
 	
 		// convert div to p
-		html = html.replace(/<div(.*?)>([\w\W]*?)<\/div>/gi, '<p>$2</p>');	
+		if (this.opts.convertDivs)
+		{
+			html = html.replace(/<div(.*?)>([\w\W]*?)<\/div>/gi, '<p>$2</p>');	
+		}
 		
 		// remove span
 		html = html.replace(/<span>([\w\W]*?)<\/span>/gi, '$1');
@@ -1292,6 +1345,153 @@ Redactor.prototype = {
 	
 		this.execCommand('inserthtml', html);	
 		
+	},	
+	
+		
+	// TEXTAREA CODE FORMATTING
+	formattingRemove: function(html)
+	{
+		// save pre
+		var prebuffer = [];
+		var pre = html.match(/<pre(.*?)>([\w\W]*?)<\/pre>/gi);
+		if (pre !== null)
+		{
+			$.each(pre, function(i,s)
+			{
+				html = html.replace(s, 'prebuffer_' + i);
+				prebuffer.push(s);
+			});
+		}
+	
+		html = html.replace(/\s{2,}/g, ' ');
+		html = html.replace(/\n/g, ' ');	
+		html = html.replace(/[\t]*/g, '');
+		html = html.replace(/\n\s*\n/g, "\n");
+		html = html.replace(/^[\s\n]*/g, '');
+		html = html.replace(/[\s\n]*$/g, '');	
+		html = html.replace(/>\s+</g, '><');
+		
+		if (prebuffer)
+		{
+			$.each(prebuffer, function(i,s)
+			{
+				html = html.replace('prebuffer_' + i, s);
+			});		
+		
+			prebuffer = [];
+		}
+		
+		return html;		
+	},
+	formattingIndenting: function(html)
+	{
+		html = html.replace(/<li/g, "\t<li");
+		html = html.replace(/<tr/g, "\t<tr");
+		html = html.replace(/<td/g, "\t\t<td");
+		html = html.replace(/<\/tr>/g, "\t</tr>");	
+		
+		return html;	
+	},
+	formattingEmptyTags: function(html)		
+	{
+		var etags = ["<pre></pre>","<blockquote>\\s*</blockquote>","<em>\\s*</em>","<ul></ul>","<ol></ol>","<li></li>","<table></table>","<tr></tr>","<span>\\s*<span>", "<span>&nbsp;<span>", "<b>\\s*</b>", "<b>&nbsp;</b>", "<p>\\s*</p>", "<p>&nbsp;</p>",  "<p>\\s*<br>\\s*</p>", "<div>\\s*</div>", "<div>\\s*<br>\\s*</div>"];
+		for (var i = 0; i < etags.length; ++i)
+		{
+			var bbb = etags[i];
+			html = html.replace(new RegExp(bbb,'gi'), "");
+		}
+		
+		return html;
+	},
+	formattingAddBefore: function(html)
+	{
+		var lb = '\r\n';
+		var btags = ["<p", "<form","</ul>", '</ol>', "<fieldset","<legend","<object","<embed","<select","<option","<input","<textarea","<pre","<blockquote","<ul","<ol","<li","<dl","<dt","<dd","<table", "<thead","<tbody","<caption","</caption>","<th","<tr","<td","<figure"];
+		for (var i = 0; i < btags.length; ++i)
+		{
+			var eee = btags[i];
+			html = html.replace(new RegExp(eee,'gi'),lb+eee);
+		}
+		
+		return html;
+	},
+	formattingAddAfter: function(html)
+	{
+		var lb = '\r\n';		
+		var atags = ['</p>', '</div>', '</h1>', '</h2>', '</h3>', '</h4>', '</h5>', '</h6>', '<br>', '<br />', '</dl>', '</dt>', '</dd>', '</form>', '</blockquote>', '</pre>', '</legend>', '</fieldset>', '</object>', '</embed>', '</textarea>', '</select>', '</option>', '</table>', '</thead>', '</tbody>', '</tr>', '</td>', '</th>', '</figure>'];
+		for (var i = 0; i < atags.length; ++i)
+		{
+			var aaa = atags[i];
+			html = html.replace(new RegExp(aaa,'gi'),aaa+lb);
+		}
+		
+		return html;
+	},	
+	formatting: function(html)
+	{
+		html = this.formattingRemove(html);
+	
+		// empty tags
+		html = this.formattingEmptyTags(html);
+					
+		// add formatting before
+		html = this.formattingAddBefore(html);
+		
+		// add formatting after
+		html = this.formattingAddAfter(html);
+
+		// indenting
+		html = this.formattingIndenting(html);	
+	
+		return html;	
+	},
+	
+	// TOGGLE
+	toggle: function()
+	{
+		var html;
+	
+		if (this.opts.visual)
+		{
+			this.$editor.hide();
+			
+			html = this.$editor.html();
+			html = $.trim(this.formatting(html));
+				
+			this.$el.height(this.$editor.innerHeight()).val(html).show().focus();
+			
+			this.setBtnActive('html');
+			this.opts.visual = false;
+		}
+		else
+		{
+			this.$el.hide();
+			
+			this.$editor.html(this.$el.val());
+			this.$editor.show();
+
+			if (this.$editor.html() === '')
+			{
+				if (!$.browser.mozilla)
+				{
+					html = this.opts.allEmptyHtml;
+				}
+				else
+				{
+					html = this.opts.mozillaEmptyHtml;
+				}
+
+				this.setCode(html);
+			}
+
+			this.$editor.focus();
+			
+			this.setBtnInactive('html');
+			this.opts.visual = true;
+			
+			this.observeImages();
+			this.observeTables();
+		}
 	},	
 
 	// AUTOSAVE
@@ -1388,12 +1588,6 @@ Redactor.prototype = {
 		else if (s.func !== 'show')
 		{
 			button.click($.proxy(function(e) {
-			
-				if (this.oldIE())	
-				{
-					this.$editor.focus();
-					this.saveSelection();
-				}
 			
 				this[s.func](e); 
 				
@@ -1605,7 +1799,7 @@ Redactor.prototype = {
 		
 		return frag;
 	},
-	saveSelection: function ()
+	saveSelection: function()
 	{
 		this.savedSel = null;
 		this.savedSelObj = null;
@@ -2238,11 +2432,12 @@ Redactor.prototype = {
 	showLink: function()
 	{
 		this.saveSelection();
-	
+
 		var handler = $.proxy(function()
-		{
+		{			
+			this.insert_link_node = false;
 			var sel = this.getSelection();
-			var url = '', text = '';
+			var url = '', text = '', target = '';
 			
 			if ($.browser.msie)
 			{
@@ -2252,6 +2447,7 @@ Redactor.prototype = {
 					this.insert_link_node = $(parent);
 					text = this.insert_link_node.text();
 					url = this.insert_link_node.attr('href');
+					target = this.insert_link_node.attr('target');
 				}
 				else
 				{
@@ -2263,17 +2459,6 @@ Redactor.prototype = {
 					{
 						text = sel.toString();
 					}
-
-					this.spanid = Math.floor(Math.random() * 99999);
-	
-					var html = '<span id="span' + this.spanid + '">' + text + '</span>';
-					
-					if (text !== '')
-					{
-						html = '<span id="span' + this.spanid + '">' + text + '</span>';
-					}
-					
-					this.execCommand('inserthtml', html);
 				}
 			}
 			else
@@ -2282,6 +2467,8 @@ Redactor.prototype = {
 				{
 					url = sel.anchorNode.parentNode.href;
 					text = sel.anchorNode.parentNode.text;
+					target = sel.anchorNode.parentNode.target;
+					
 					if (sel.toString() === '')
 					{
 						this.insert_link_node = sel.anchorNode.parentNode;
@@ -2290,13 +2477,12 @@ Redactor.prototype = {
 				else
 				{
 					text = sel.toString();
-					url = '';
 				}
 			}
 			
 			$('.redactor_link_text').val(text);
 			
-			var turl = url.replace(top.location.href, '');
+			var turl = url.replace(self.location.href, '');
 			
 			if (url.search('mailto:') === 0)
 			{
@@ -2317,6 +2503,11 @@ Redactor.prototype = {
 				$('#redactor_link_url').val(url);
 			}
 			
+			if (target === '_blank')
+			{
+				$('#redactor_link_blank').attr('checked', true);
+			}
+			
 			$('#redactor_insert_link_btn').click($.proxy(this.insertLink, this));
 			
 
@@ -2326,19 +2517,24 @@ Redactor.prototype = {
 		{
 			$('#redactor_link_url').focus();
 		};
-		
+
+
 		this.modalInit(RLANG.link, 'link', 460, handler, endCallback);
 
 	},
 	insertLink: function()
 	{
 		var tab_selected = $('#redactor_tab_selected').val();
-		var link = '', text = '';
+		var link = '', text = '', target = '';
 		
 		if (tab_selected === '1') // url
 		{
 			link = $('#redactor_link_url').val();
 			text = $('#redactor_link_url_text').val();
+			if ($('#redactor_link_blank').attr('checked'))
+			{
+				target = '_blank';
+			}
 		}
 		else if (tab_selected === '2') // mailto
 		{
@@ -2351,35 +2547,32 @@ Redactor.prototype = {
 			text = $('#redactor_link_anchor_text').val();
 		}			
 
-		this._insertLink('<a href="' + link + '">' +  text + '</a> ', $.trim(text), link);
+		this._insertLink('<a href="' + link + '" target="' + target + '">' +  text + '</a>&nbsp;', $.trim(text), link, target);
 
 	},
-	_insertLink: function(a, text, link)
+	_insertLink: function(a, text, link, target)
 	{
-		this.restoreSelection();		
+		this.$editor.focus();
+		this.restoreSelection();	
 	
 		if (text !== '')
 		{
 			if (this.insert_link_node)
-			{
+			{				
 				$(this.insert_link_node).text(text);
 				$(this.insert_link_node).attr('href', link);
+				if (target !== '')
+				{
+					$(this.insert_link_node).attr('target', target);
+				}
 				this.syncCode();
 			}
 			else
 			{
-				if ($.browser.msie)
-				{
-					$('#span' + this.spanid).replaceWith(a);
-					this.syncCode();
-				}
-				else
-				{
-					this.execCommand('inserthtml', a);
-				}
+				this.execCommand('inserthtml', a);
 			}
 		}
-
+		
 		this.modalClose();
 	},
 
