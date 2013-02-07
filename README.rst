@@ -6,7 +6,7 @@ Installation
 
 #. Install or add ``django-imperavi`` to your python path.
 
-#. Add ``imperavi`` to your ``INSTALLED_APPS`` setting.
+#. Add ``imperavi`` to your ``INSTALLED_APPS`` setting (consider adding ``sorl.thumbnail`` as well)
 
 #. Add imperavi URL include to your project's ``urls.py`` file::
 
