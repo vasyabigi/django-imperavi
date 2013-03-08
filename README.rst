@@ -6,7 +6,7 @@ Installation
 
 #. Install or add ``django-imperavi`` to your python path.
 
-#. Add ``imperavi`` to your ``INSTALLED_APPS`` setting.
+#. Add ``imperavi`` to your ``INSTALLED_APPS`` setting (consider adding ``sorl.thumbnail`` as well)
 
 #. Add imperavi URL include to your project's ``urls.py`` file::
 
@@ -42,7 +42,7 @@ Add a ``IMPERAVI_CUSTOM_SETTINGS`` variable to your ``settings.py`` with custom 
     IMPERAVI_CUSTOM_SETTINGS = {
         'lang': 'ua',
         'toolbar': 'mini',
-        'resize': true
+        'resize': True
     }
 
 Full list of settings is `here.
