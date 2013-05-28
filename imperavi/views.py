@@ -1,4 +1,3 @@
-import md5
 import json
 import os.path
 import imghdr
@@ -14,6 +13,10 @@ from forms import ImageForm, FileForm
 
 from sorl.thumbnail import get_thumbnail
 
+try:
+    from hashlib import md5
+except ImportError:
+    from md5 import md5
 
 UPLOAD_PATH = getattr(settings, 'IMPERAVI_UPLOAD_PATH', 'imperavi/')
 
@@ -28,7 +31,7 @@ def upload_image(request, upload_path=None):
         if image.content_type not in ['image/png', 'image/jpg', 'image/jpeg', 'image/pjpeg']:
             return HttpResponse('Bad image format')
         image_name, extension = os.path.splitext(image.name)
-        m = md5.new(smart_str(image_name))
+        m = md5(smart_str(image_name))
         hashed_name = '{0}{1}'.format(m.hexdigest(), extension)
         image_path = default_storage.save(os.path.join(upload_path or UPLOAD_PATH, hashed_name), image)
         image_url = default_storage.url(image_path)
