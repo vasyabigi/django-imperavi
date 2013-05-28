@@ -1,4 +1,3 @@
-import md5
 import json
 import os.path
 import imghdr
@@ -14,6 +13,10 @@ from forms import ImageForm, FileForm
 
 from sorl.thumbnail import get_thumbnail
 
+try:
+    from hashlib import md5
+except ImportError:
+    import md5
 
 UPLOAD_PATH = getattr(settings, 'IMPERAVI_UPLOAD_PATH', 'imperavi/')
 
