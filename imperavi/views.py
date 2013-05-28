@@ -16,7 +16,7 @@ from sorl.thumbnail import get_thumbnail
 try:
     from hashlib import md5
 except ImportError:
-    import md5
+    from md5 import md5
 
 UPLOAD_PATH = getattr(settings, 'IMPERAVI_UPLOAD_PATH', 'imperavi/')
 
