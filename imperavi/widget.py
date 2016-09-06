@@ -1,6 +1,10 @@
 import json
 from django.forms.widgets import Textarea
-from django.forms.util import flatatt
+try:
+    from django.forms.utils import flatatt
+except ImportError:  # Django < 1.7
+    from django.forms.util import flatatt
+
 from django.utils.safestring import mark_safe
 from django.utils.html import conditional_escape
 from django.utils.encoding import force_unicode
